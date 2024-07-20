@@ -1,11 +1,11 @@
 project(libwolv-math_eval)
 
 # Add library
-add_library(${PROJECT_NAME} STATIC
+add_library(${PROJECT_NAME} INTERFACE
         source/math_eval/math_evaluator.cpp
 )
-target_include_directories(${PROJECT_NAME} PUBLIC include)
-target_link_libraries(${PROJECT_NAME} PUBLIC wolv::types wolv::utils)
+target_include_directories(${PROJECT_NAME} INTERFACE include)
+target_link_libraries(${PROJECT_NAME} INTERFACE wolv::types wolv::utils)
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "")
 
 string(REPLACE "libwolv-" "" PROJECT_NAME_SPACE ${PROJECT_NAME})

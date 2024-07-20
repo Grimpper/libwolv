@@ -24,3 +24,15 @@ if (LIBWOLV_ENABLE_TESTS)
     add_subdirectory(tests EXCLUDE_FROM_ALL)
 endif ()
 
+# Export and install all required targets
+install(TARGETS
+  libwolv
+  libwolv-containers
+  libwolv-hash
+  libwolv-io
+  libwolv-math_eval
+  libwolv-net
+  # libwolv-template # FIXME: cannot be found.
+  libwolv-testing
+  libwolv-types
+  libwolv-utils)

@@ -1,12 +1,12 @@
 project(libwolv-net)
 
 # Add library
-add_library(${PROJECT_NAME} STATIC
+add_library(${PROJECT_NAME} INTERFACE
         source/net/socket_client.cpp
         source/net/socket_server.cpp
         source/net/common.cpp)
-target_include_directories(${PROJECT_NAME} PUBLIC include)
-target_link_libraries(${PROJECT_NAME} PUBLIC wolv::types wolv::utils)
+target_include_directories(${PROJECT_NAME} INTERFACE include)
+target_link_libraries(${PROJECT_NAME} INTERFACE wolv::types wolv::utils)
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "")
 
 if (WIN32)
